@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/StyleSheetPerfil.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="bg-image" onclick="CloseAll()" ></div>
+<div class="bg-text2" style="left:50%;top:15%"><img src="images/logoIcon.png" width="60%" height="60%"></div>
+
+<div class="bg-text" style="left:15%" id="DadosBusca">
+		<div class="vertical-menu" id="Containeropcoes" >
+      
+      <tr>
+          <p style="margin-top:-3%"><img src="images/Layer8.png" align:"middle">Usuário</p>
+        
+          <a style="font-size:170%"  onclick="ShowPerfil(1)">Dados</a>
+          
+          <a style="font-size:170%" onclick="ShowPerfil(2)">Alerta</a>
+   
+          <a style="font-size:170%" onclick="ShowPerfil(3)">Contrato</a>
+    
+          <a style="font-size:170%" onclick="ShowPerfil(4)">Imoveis</a>
+      
+          <a style="font-size:170%" onclick="ShowPerfil(5)">Avaliações</a>       
+      </tr>
+		</div>
+</div>
+
+
+
+<div class="bg-text3" style="left:60%" style="width:90%" id="PerfilOpcao">
+  <form id="frmMudarDados" class="overlay" >
+    <div class="containerOVER"  > 
+      <hr>
+        <label for="nome" ><b>Novo Nome</b></label>
+		    <input type="text" placeholder="Link" id="fldNome">  
+        <label for="email/cpf" id="labelEmail"><b>Novo Email</b></label>
+        <input id="fieldEmail" type="text" placeholder="email/cpf" name="fldEmail" >
+        <label for="psw" id="labelpsw"><b> Nova Senha</b></label>
+        <input id="fieldSenha" type="password" placeholder="senha" name="fldSenha" >
+      <hr>
+      <button type="button" class="btnLogin3" id="btnMudarDados">Alterar</buttn>
+      <button type="button" class="btnLogin3" onclick="off(1)">Cancelar</buttn>
+    </div>
+  </form>
+  <form id="frmQuebrarContrato" class="overlay" >
+    <div class="containerOVER" style="height: 50%"> 
+      <hr>
+        <label for="nome"><b>Motivo</b></label>
+        <input type="text" placeholder="Mudança" id="fldMotivo">  
+      <hr>
+      <button type="button" class="btnLogin3" id="btnQuebraContrato">Solicitar</buttn>
+      <button type="button" class="btnLogin3" onclick="off(2)" >Cancelar</buttn>
+    </div>
+  </form>
+  <div class="overlay2" id="frmCadastroImovel">
+    <form  >
+      <div class="containerOVER" style="height: 100%"> 
+        <hr>
+          <label for="Nota" style="font-size: 80%" style="margin-top: -20%"><b>Nota:<span id="NotaNum"></span></b></label></b></label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="Nota" oninput="SliderNota(this.value, this.id)">
+          <label for="Cidade" style="font-size: 80%"><b>Cidade</b></label>
+          <input type="text" placeholder="Hyrule" name="fldCidade" >
+          <label for="Bairro" style="font-size: 80%"><b>Bairro</b></label>
+          <input type="text" placeholder="Termina" name="fldBairro" >
+          <label for="Preco" style="font-size: 80%"><b>Preço: <span id="PrecoValor"></span></b></label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="Preco" oninput="SliderNota(this.value, this.id)">
+          <label for="Quarto" style="font-size: 80%"><b>Quarto: <span id="QuartoNum"></span></b></label>
+          <input type="range" min="1" max="10" value="5" class="slider" id="Quarto" oninput="SliderNota(this.value, this.id)">
+          <label for="Suite" style="font-size: 80%"><b>Suíte: <span id="SuiteNum"></span></b></label>
+          <input type="range" min="1" max="10" value="5" class="slider" id="Suite" oninput="SliderNota(this.value, this.id)">
+          <label for="Suite" style="font-size: 80%"><b>Fotos <span id="FotosImovel"></span></b></label>
+          <input type="file" name="pic" accept="image/*" class="btnLogin3" required> 
+        <hr>
+        <button type="button" class="btnLogin3" id="btnQuebraContrato">Solicitar</buttn>
+        <button type="button" class="btnLogin3" onclick="off(3)" >Cancelar</buttn>
+      </div>
+    </form>
+  </div>
+  <div id="frmAvaliar" class="overlay2">
+    <form>
+      <div class="containerOVER" id="ContainerLogin" >
+        <hr>
+          <p>Usuário <input type="checkbox" id="AvaliaUsuario" onclick="EscolheAvaliar()"></p>
+          <p>Imóvel<input type="checkbox" id="AvaliaImovel" onclick="EscolheAvaliar()" style="margin-left: 10.5%"></p>
+          <div id="CampoUsario" style="display:block"><label for="username" ><b>Username</b></label>
+          <input type="text" id="fldUsuario"></div>
+          <div id="CampoImovel" style="display:block"><label for="Cidade" ><b>Cod Imóvel</b></label>
+          <input type="text" id="fldImóvel"></div>
+          <label for="msgAvaliacao"><b>Avaliação</b></label>
+          <input type="text" name="fldAvaliacao">
+          <label for="Nota2" style="font-size: 80%" style="margin-top: -20%"><b>Nota:<span id="NotaNum2"></span></b></label></b></label>
+          <input type="range" min="1" max="100" value="50" class="slider" id="Nota2" oninput="SliderNota(this.value, this.id)">
+        <hr>
+        <button type="button" class="btnLogin3" id="btnCadastroImovel" >Cadastrar</buttn>
+        <button type="button" class="btnLogin3" onclick="off(4)" >Cancelar</buttn>
+      </div>
+    </form>
+  </div>
+  <div id="divMensagem" class="overlay2">
+    <form>
+      <div class="containerOVER" id="ContainerLogin" >
+        <hr>
+        <label for="msgUser"><b>Usuário</b></label>
+        <input type="text" name="fldMsgUser">
+        <label for="msgUserself"><b>Mensagem</b></label>
+        <input type="text" placeholder="Olá, bom dia" id="fldMensagem">  
+        <hr>
+        <button type="button" class="btnLogin3" id="btnEnviaMensagem" >Enviar</buttn>
+        <button type="button" class="btnLogin3" onclick="off(5)" >Cancelar</buttn>
+      </div>
+    </form>
+  </div>
+  <div id="divDados" style="display:block">
+    <p style="text-align:left"><p class="PinLine" style="text-align:left"> Nome :</p> <p class="PinLine"> Link</p> </p>
+    <hr>
+      <p class="PinLine" > Email :</p> <p class="PinLine"> Link@tloz.com</p>
+    </hr>
+    <p></p>
+    <hr>
+      <p class="PinLine" style="text-align:left"> Senha :</p> <p class="PinLine"> ******</p>
+    </hr>
+    <p></p>
+    <hr>
+      <p class="PinLine" style="text-align:left"> Pontuação :</p> <p class="PinLine"> 87</p>
+    </hr>
+    <p></p>
+    <hr>
+      <button class="btnLogin" onclick="ShowOver(1)">Alterar dados</button>
+    </hr>
+  </div>
+
+  <div id="divAlerta" style="display:none">
+    <div id="msg1">
+      <p><p class="PinLine" > Alerta : </p> <p class="PinLine" id="DescriptAlert"> mensagem </p><p></p> 
+      <button class="btnLogin2" style="margin-left:30%"> <img src="images/ok.png" width="30%" height="30%" align:"middle"> </button>
+      <button class="btnLogin2" style="margin-left:0%" onclick="DeletaNot(document.getElementById('msg1'))"> <img src="images/x.png" width="30%" height="30%" align:"middle"> </button>
+    </div>
+    <div id="msg2"> 
+      <hr>
+      <p><p class="PinLine" > Usuário : </p> <p class="PinLine" id="DescriptAlert"> mensagem </p> <p></p> 
+      <button class="btnLogin2" style="margin-left:30%" > <img src="images/ok.png" width="30%" height="30%" align:"middle"> </button>
+      <button class="btnLogin2" style="margin-left:0%" onclick="DeletaNot(document.getElementById('msg2'))"> <img src="images/x.png" width="30%" height="30%" align:"middle"> </button></p>
+      </hr>
+    </div>  
+      <p></p>
+      <p></p>
+      <button class="btnLogin" onclick="ShowOver(5)">Enviar Mensagem</button>
+  </div>
+
+  <div id="divContrato" style="display:none">
+    <div style="margin-left:-40%">
+      <hr>
+      <p class="PinLine" style="text-align:left"><button class="btnLogin2" style="margin-left:30%" > <img src="images/ContratoValido.png" width="30%" height="30%" align:"middle"></button> EndereçoImovel</p>
+        <button class="btnLogin" style="margin-left:50%" style="font-size:30%" onclick="ShowOver(2)"> Solicitar Quebra </button>
+      
+      </hr>
+      <hr>
+        <p class="PinLine" > <button class="btnLogin2" style="margin-left:30%"> <img src="images/ContratoInvalido.png" width="30%" height="30%" align:"middle"></button> EndereçoImovel</p>
+      </hr>
+      <p></p>
+    </div> 
+  </div>
+
+  <div id="divImoveis" style="display:none">
+    <p style="text-align:left" class="PinLine" style="text-align:left"><img src="images/FotoCasa.png"  align="middle" width="15%" height="15%"border="2"> EndereçoImovel</p> 
+    <p>Status: Alugando</p>
+    <p></p>
+    <hr>
+      <p style="text-align:left" class="PinLine" style="text-align:left"><img src="images/FotoCasa.png"  align="middle" width="15%" height="15%"border="2"> EndereçoImovel</p>
+      <p>Status: Livre</p>
+    </hr>
+    <p></p>
+    <button class="btnLogin" onclick="ShowOver(3)">Cadastrar Imóvel</button>
+  </div>
+
+  <div id="divAvaliacao" style="display:none">
+      <p style="text-align:left" style="font-size: 180%"><p class="PinLine" style="font-size: 180%" style="text-align:left"> Usuário :</p> <p class="PinLine" id="Avaliador" style="font-size: 180%"> Ganondorf</p> </p>
+      <p id="avaliacao" style="font-size: 150%">Homem de mal caráter, sempre atrasava no aluguel</p>
+      <p style="text-align:left" style="font-size: 150%"><p class="PinLine" style="font-size: 150%" style="text-align:left"> Nota :</p><p class="PinLine" style="font-size: 150%" id="NotaAvaliacao">23</p> </p>
+      <hr>
+      <p style="text-align:left" style="font-size: 180%"><p class="PinLine" style="font-size: 180%" style="text-align:left"> Usuário :</p> <p class="PinLine" id="Avaliador" style="font-size: 180%"> Zelda</p> </p>
+      <p id="avaliacao" style="font-size: 150%">Ótima pessoa e gentil, mas costuma demorar pra pagar</p>
+      <p style="text-align:left" style="font-size: 150%"><p class="PinLine" style="font-size: 150%" style="text-align:left"> Nota :</p><p class="PinLine" style="font-size: 150%" id="NotaAvaliacao">76</p> </p>
+      </hr>
+      <p></p>
+      <button class="btnLogin" onclick="ShowOver(4)">Avaliar</button>
+  </div>
+    
+</div>
+
+</body>
+</html>
+
+
+<script src="JavaScript/Perfil.js">
+
+</script>

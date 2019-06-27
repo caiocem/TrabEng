@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/StyleSheetMenuLogado.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="bg-image" onclick="CloseAll()" ></div>
+<div class="bg-text2" style="left:50%;top:15%"><img src="images/logoIcon.png" width="60%" height="60%"></div>
+
+<div id="Perfil" class="bg-text2" style="left:86.5%;top:21%"> 
+  <div class="container2"> 
+    <p style="font-weight: bold">Usuário <img src="images/Layer8.png" width="20%" height="20%" align="middle"></p>    
+  </div>
+</div>
+
+<div class="bg-text" id="Login" onclick="">
+  <div id="HeaderLogin" style="display:block"> <img src="images/logadoIcon.png" width="60%" height="60%" > </div>
+  <form id="frmLogin"  style="display:none" class="container">
+    <button type="btnLogin" class="btnLogin" id="btnImoveis" >Imóveis</button>
+	</form>
+</div>
+
+<div class="bg-text" style="left:50%" id="Busca" onclick="ShowBusca()">
+  <div id="HeaderBusca" style="display: block"> <img src="images/BuscaIcon.png" width="60%" height="60%" ></div>
+  <form id="frmBusca"  style="display:none;">
+		<div class="container" id="ContainerLogin">
+		  <hr>
+		  <label for="Nota"><b>Nota:<span id="NotaNum"></span></b></label></b></label>
+		  <input type="range" min="1" max="100" value="50" class="slider" id="Nota" oninput="SliderNota(this.value, this.id)">
+		  <label for="Cidade"><b>Cidade</b></label>
+      <input type="text" placeholder="Hyrule" name="fldCidade" >
+      <label for="Bairro"><b>Bairro</b></label>
+      <input type="text" placeholder="Termina" name="fldBairro" >
+      <label for="Preco"><b>Preço: <span id="PrecoValor"></span></b></label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="Preco" oninput="SliderNota(this.value, this.id)">
+      <label for="Quarto"><b>Quarto: <span id="QuartoNum"></span></b></label>
+      <input type="range" min="1" max="10" value="5" class="slider" id="Quarto" oninput="SliderNota(this.value, this.id)">
+      <label for="Suite"><b>Suíte: <span id="SuiteNum"></span></b></label>
+      <input type="range" min="1" max="10" value="5" class="slider" id="Suite" oninput="SliderNota(this.value, this.id)">
+      <label for="Cod"><b>Código</b></label>
+		  <input type="text" placeholder="M45T3R5W0RD" name="fldBairro" >
+	  	<hr>
+		  <button type="submit" class="btnLogin">Buscar</button>
+		</div>
+	</form>
+</div>
+
+<div class="bg-text" style="left:80%" id="Contato" onclick="ShowContato()">
+  <div id="HeaderContato" style="display: block"> <img src="images/ContatoIcon.png" width="60%" height="60%" ></div>
+    <div style="display: none" id="txtContato"><p type="text" style="font-size: 155%">Telefone: (99)9999999</p>
+                                               <p type="text" style="font-size: 155%">  Email: Kza@pkmn.com</p>
+    </div>
+	
+</div>
+
+</body>
+</html>
+
+
+<script src="JavaScript/MenuLogado.js">
+
+  </script>

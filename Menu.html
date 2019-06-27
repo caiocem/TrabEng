@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/StyleSheetMenu.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="bg-image" onclick="CloseAll()" ></div>
+<div class="bg-text2" style="left:50%;top:15%"><img src="images/logoIcon.png" width="60%" height="60%"></div>
+
+<div class="bg-text" id="Login" onclick="ShowLogin();">
+  <div id="HeaderLogin" style="display:block"> <img src="images/loginIcon.png" width="60%" height="60%" > </div>
+  <form id="frmLogin" >
+		<div class="container" id="ContainerLogin" style="display:none;"> 
+		  <hr>
+		  <label for="email/cpf" id="labelEmail"><b>Email/CPF</b></label>
+		  <input id="fieldEmail" type="text" placeholder="email/cpf" name="fldEmail" required>
+	  
+		  <label for="psw" id="labelpsw"><b>Password</b></label>
+		  <input id="fieldSenha" type="password" placeholder="senha" name="fldSenha" required>
+	  	  <hr>
+		  <button type="submit" class="btnLogin" id="btnLogin">Logar</button>
+		  <button type="button" class="btnLogin" id="ShowCadastr"onclick="ShowCadastro()">Cadastrar</button>
+		</div>
+	</form>
+	<form id="frmCadastro"  >
+		<div class="container" id="ContainerCadastro" style="display:none; ">
+		  <hr>
+		  <label for="nome"><b>Nome</b></label>
+		  <input type="text" placeholder="Link" id="fldNome" required>
+		  <label for="email"><b>Email</b></label>
+		  <input type="text" placeholder="TheHeroOfTime@tloz.com" id="fldEmail" required>
+		  <label for="cpf"><b>CPF</b></label>
+		  <input type="text" placeholder="cpf" id="fldCPF" required>
+		  <label for="psw"><b>Password</b></label>
+		  <input type="password" placeholder="senha" id="fldSenha" required>
+		  <label for="cell"><b>Celular</b></label>
+		  <input type="text" placeholder="(99)99999999" id="fldCell" required>
+		  <label for="foto"><b>Foto</b></label>
+      <input type="file" name="pic" accept="image/*" class="btnLogin" required>
+
+      <label for="fotoDoc"><b>Foto RG/Passaporte</b></label>
+      <input type="file" name="picDoc" accept="image/*" class="btnLogin" required>
+
+		  <hr>
+		  <button type="submit" class="btnLogin" id="btnCadastrar" onclick="CloseCadastro()">Cadastrar</button>
+		</div>
+	</form>
+</div>
+
+<div class="bg-text" style="left:50%" id="Busca" onclick="ShowBusca()">
+  <div id="HeaderBusca" style="display: block"> <img src="images/BuscaIcon.png" width="60%" height="60%" ></div>
+  <form id="frmBusca"  style="display:none;">
+		<div class="container" id="ContainerLogin">
+		  <hr>
+		  <label for="Nota"><b>Nota:<span id="NotaNum"></span></b></label></b></label>
+		  <input type="range" min="1" max="100" value="50" class="slider" id="Nota" oninput="SliderNota(this.value, this.id)">
+		  <label for="Cidade"><b>Cidade</b></label>
+      <input type="text" placeholder="Hyrule" name="fldCidade" >
+      <label for="Bairro"><b>Bairro</b></label>
+      <input type="text" placeholder="Termina" name="fldBairro" >
+      <label for="Preco"><b>Preço: <span id="PrecoValor"></span></b></label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="Preco" oninput="SliderNota(this.value, this.id)">
+      <label for="Quarto"><b>Quarto: <span id="QuartoNum"></span></b></label>
+      <input type="range" min="1" max="10" value="5" class="slider" id="Quarto" oninput="SliderNota(this.value, this.id)">
+      <label for="Suite"><b>Suíte: <span id="SuiteNum"></span></b></label>
+      <input type="range" min="1" max="10" value="5" class="slider" id="Suite" oninput="SliderNota(this.value, this.id)">
+      <label for="Cod"><b>Código</b></label>
+		  <input type="text" placeholder="M45T3R5W0RD" name="fldBairro" >
+	  	<hr>
+		  <button type="submit" class="btnLogin">Buscar</button>
+		</div>
+	</form>
+</div>
+
+<div class="bg-text" style="left:80%" id="Contato" onclick="ShowContato()">
+  <div id="HeaderContato" style="display: block"> <img src="images/ContatoIcon.png" width="60%" height="60%" ></div>
+    <div style="display: none" id="txtContato"><p type="text" style="font-size: 155%">Telefone: (99)9999999</p>
+                                               <p type="text" style="font-size: 155%">  Email: Kza@pkmn.com</p>
+    </div>
+	
+</div>
+
+</body>
+</html>
+
+
+<script src="JavaScript/Menu.js">
+
+  </script>

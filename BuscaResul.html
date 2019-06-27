@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/StyleSheetBuscaResul.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="bg-image" onclick="CloseAll()" ></div>
+<div class="bg-text2" style="left:50%;top:15%"><img src="images/logoIcon.png" width="60%" height="60%"></div>
+
+<div id="divPerfil" class="bg-text2" style="left:86.5%;top:21%"> 
+  <div class="container2">
+    <p style="font-weight: bold">Usuário <img src="images/Layer8.png" width="20%" height="20%" align="middle"></p>    
+    
+  </div>
+</div>
+
+<div class="bg-text" style="left:15%" id="DadosBusca" onclick="ShowBusca()">
+  <form id="frmBusca"  style="display:block;">
+		<div class="container" id="ContainerLogin" >
+		  <hr>
+		  <label for="Nota"><b>Nota:<span id="NotaNum"></span></b></label></b></label>
+		  <input type="range" min="1" max="100" value="50" class="slider" id="Nota" oninput="SliderNota(this.value, this.id)">
+		  <label for="Cidade"><b>Cidade</b></label>
+      <input type="text" placeholder="Hyrule" name="fldCidade" >
+      <label for="Bairro"><b>Bairro</b></label>
+      <input type="text" placeholder="Termina" name="fldBairro" >
+      <label for="Preco"><b>Preço: <span id="PrecoValor"></span></b></label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="Preco" oninput="SliderNota(this.value, this.id)">
+      <label for="Quarto"><b>Quarto: <span id="QuartoNum"></span></b></label>
+      <input type="range" min="1" max="10" value="5" class="slider" id="Quarto" oninput="SliderNota(this.value, this.id)">
+      <label for="Suite"><b>Suíte: <span id="SuiteNum"></span></b></label>
+      <input type="range" min="1" max="10" value="5" class="slider" id="Suite" oninput="SliderNota(this.value, this.id)">
+      <label for="Cod"><b>Código</b></label>
+		  <input type="text" placeholder="M45T3R5W0RD" name="fldBairro" >
+	  	<hr>
+		  <button type="button" class="btnLogin">Buscar</button>
+		</div>
+	</form>
+</div>
+
+<div class="bg-text3" style="left:60%" style="width:90%" id="Resultado">
+  <div id="FotosCasa" class="overlay" >
+    <div class="containerOVER"  > 
+      <hr>
+      <div class="w3-content w3-section" >
+        <img class="mySlides" src="images/img1.png" style="width:100%" style="height:10%" >
+        <img class="mySlides" src="images/img2.png" style="width:100%">
+        <img class="mySlides" src="images/img3.png" style="width:100%">
+      </div>
+      <hr>
+
+      <button type="button" class="btnLogin3" onclick="off(2)">X</button>
+    </div>
+  </div>
+   <div id="divContataUser" class="overlay" style="display:none">
+    <div class="containerOVER"  > 
+      <hr>
+        <input type="text" placeholder="Olá, bom dia" id="fldMensagem">  
+      <hr>
+      <button type="button" class="btnLogin3" onclick="off(3)" id="btnEnviaMensagem">Enviar</button>
+      <button type="button" class="btnLogin3" onclick="off(3)">Cancelar</button>
+    </div>
+  </div>
+    <table style="width:100%">
+        <tr>
+          <th >
+             <div class="containerTAB" id="dadosAp">
+                    <form id="frmAlugar" class="overlay" >
+                            <div class="containerOVER" id="ContainerLogin" >
+                              <hr>
+                              <p><label for="Pagamento"><b>Pagamento</b></label></p>
+                                <select name="slctPagar">
+                                    <option value="vlCard">Cartão</option>
+                                    <option value="vlBoleto">Boleto</option>
+                                </select>
+                              <p><label for="Cidade"><b>Data Início</b></label></p>
+                              <input type="date" name="DataChegada">
+                              <hr>
+                              <button type="button" class="btnLogin3" onclick="off(1)" id="btnRequereAluguel">Confirmar</buttn>
+                              <button type="button" class="btnLogin3" onclick="off(1)">Cancelar</buttn>
+                            </div>
+                    </form> 
+               <p class="PinLine"><p class="PinLine" style="font-size:100%">Usuário: <p class="PinLine" id=User>Link</p> <button type="button" class="btnLogin2" onclick="ShowOver(3)">Contatar</button></p> <img src="images/FotoCasa.png"  align="left" width="20%" height="50%" style="align-self:left;" border="2" style="padding-bottom: 15px; float: left;" onclick="ShowOver(2)">
+                 <p style="font-size: 120%">   Descrição </p>
+                 <p id="Descricao" style="font-size: 120%">   Duas entradas, uma para cozinha e outra para a sala. Possuí um pequeno jardim de flores, região bem arborizada. Digna de um herói </p>
+                 <p class="PinLine">Nota: </p> <p id="vlrNota" class= "PinLine">valorNota        </p> <p class="PinLine">      Preço:  </p> 
+                 <p class="PinLine" id="Custo"> R$ Custo</p> <p class="PinLine">Cod: </p><p class="PinLine"id="Cod"> asdq</p>
+                 <p class="PinLine"> <button type="button" class="btnLogin2" >Contrato</button> </p>
+                 <p class="PinLine"> <button type="button" class="btnLogin2" onclick="ShowOver(1)">Alugar</button> </p>
+              </p>
+             </div>
+          </th>
+        </tr>
+        <tr>
+            <th>
+              <div class="containerTAB" id="dadosAp">
+
+              </div>
+            </th>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+
+<script src="JavaScript/BuscaResul.js">
+
+  </script>
