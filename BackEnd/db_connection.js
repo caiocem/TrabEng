@@ -1,41 +1,57 @@
 
-module.exports = database = {
-  host     : 'localhost',
-  port     : 3306,
-  user     : 'root',
-  password : 'toor',
-  database : 'ksa'
-},
+module.exports = database = 
 {
-  testConnection : function ()
+  testConnection : function()
   {
     const mysql      = require('mysql');
-    const connection = mysql.createConnection(database);
+    const connection = mysql.createConnection({
+      host     : 'localhost',
+      port     : 3306,
+      user     : 'root',
+      password : 'toor',
+      database : 'Ksa'
+    });
 
     connection.connect(function(err){
       if(err) return console.log(err);
-      console.log('conectou!');
+      console.log('conectou com o banco!');
     })
   },
   
   execQuery : function execQuery(sqlQry,res)
   {
     const mysql      = require('mysql');
-    const connection = mysql.createConnection(database);
+    const connection = mysql.createConnection({
+      host     : 'localhost',
+      port     : 3306,
+      user     : 'root',
+      password : 'toor',
+      database : 'Ksa'
+    });
 
     connection.query(sqlQry, function(error, results, fields)
     {
       if(error) 
         res.json(error);
       else
+      {
+        console.log(results);
         res.json(results);
+      }
+        
       connection.end();
     });
   },
   insertCliente : function insertRow(sqlQry,res)
   {
     const mysql      = require('mysql');
-    const connection = mysql.createConnection(database);
+    const connection = mysql.createConnection({
+      host     : 'localhost',
+      port     : 3306,
+      user     : 'root',
+      password : 'toor',
+      database : 'Ksa'
+    });
 
     connection.query(sqlQry, function(error, results, fields)
     {
