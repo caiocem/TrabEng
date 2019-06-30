@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Template source : https://www.sparksuite.com/open-source/invoice.html</title>
+    
+    <style>
+    .invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+    
+    .invoice-box table tr td:nth-child(2) {
+        text-align: right;
+    }
+    
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+    
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+    
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.details td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td {
+        border-bottom: none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        
+        .invoice-box table tr.information table td {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+    
+    /** RTL **/
+    .rtl {
+        direction: rtl;
+        font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+    }
+    
+    .rtl table {
+        text-align: right;
+    }
+    
+    .rtl table tr td:nth-child(2) {
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body onload="loadContrato()">
+    <div class="invoice-box">
+        <table id="DadosNota" cellpadding="0" cellspacing="0">
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td class="title">
+                                <img src="logoPequeno.png" >
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="Hotel">
+                <td colspan="3">
+                    <table>
+                        <tr>
+                            <td id = "infoHotel">
+                               Ksa.<br>
+                                12345 Sunny Road<br>
+                                Sunnyville, CA 12345
+                            </td>
+                            
+                            <td>
+                                Rede Ksa<br>
+                                bomsono@boanoite.com
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="heading" rowspan="2">
+                <td colspan="3" >
+                        <div id="content">
+                                <p align="center">&nbsp;</p><h2 style="text-align: center; margin-left: 106.2pt;"><b style="font-size: 12pt;">
+                                    <div style="display: inline !important;"><b style="font-size: 12pt;">&nbsp;</b>
+                                    </div></b></h2>
+                                <div style="text-align: center;"><span style="font-size: 12pt;"><b>TERMO DE CONTRATO</b></span>
+                                </div>
+                                <p align="center"><b>LOCAÇÃO RESIDENCIAL</b><span style="font-size: 12pt; text-align: justify;">&nbsp;</span></p> 
+                                <p style="text-align: justify;" class="MsoNormal"><b><span style="font-size: 12pt;" id="nomeLocador">(NOME)</span></b><span style="font-size: 12pt;">, <b id="cpfLocador">(CPF)</b>, <b id="rgLocador">(IDENTIDADE)</b> ,doravante denominado <b >LOCADOR;</b> <b id="nomeLocatario">(NOME)</b>, <b id="cpfLocatario">(CPF)</b>, <b id="rgLocatario">(IDENTIDADE)</b>,
+                                doravante denominado <b>LOCATÁRIO</b>, celebram o presente contrato de locação
+                                residencial, com as cláusulas e condições seguintes:</span><span style="font-size: 12pt;">&nbsp;</span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>1)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O LOCADOR cede para locação residencial ao LOCATÁRIO,
+                                o imóvel situado <b id="endercoImovel">(ENDEREÇO DO IMÓVEL)</b>.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>2)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">A locação destina-se ao uso exclusivo como residência
+                                e domicilio do LOCATÁRIO.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>3)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O prazo de locação inicia-se
+                                em (<b id="dataInicio">DATA)</b> e termina em <b id="dataFim">(DATA)</b> que é a data limite em que o imóvel
+                                objeto do presente deverá ser restituído independentemente de qualquer
+                                notificação ou interpelação sob pena de caracterizar infração contratual.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>4)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O aluguel mensal será de <b id="valor">(R$)</b> e deverá ser pago
+                                até a data de seu vencimento, dia 15 de todo mês,
+                                via <b id="metodoPagamento">(PAGAMENTO)</b>.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify;" class="MsoNormal"><span style="font-size: 12pt;">4.1) A impontualidade acarretará juros moratórios na
+                                base de 1% (um por cento) ao mês calculado sobre o valor do aluguel. O atraso
+                                superior a 30 (trinta) dias implicará em correção monetária do valor do aluguel
+                                e encargos de cobrança correspondentes a 10% (dez por cento) do valor assim
+                                corrigido.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify;" class="MsoNormal"><span style="font-size: 12pt;">4.2) O pagamento de qualquer dos aluguéis não implica
+                                em renúncia do direito de cobrança de eventuais diferenças de aluguéis, de
+                                encargos ou impostos que oportunamente não tiverem sidos lançados nos
+                                respectivos recibos.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>5)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O aluguel será reajustado anualmente pela variação do
+                                IGP-M.
+                                Entretanto, se em virtude de lei subsequente vier a ser admitida a correção e
+                                periodicidade inferior a prevista na legislação vigente à época de sua
+                                celebração, que é anual, concordam as partes desde já e em caráter irrevogável
+                                que a correção do aluguel e o seu indexador passará automaticamente a ser feito
+                                no menor prazo que for permitido pela lei posterior e pelo maior índice vigente
+                                dentre os permitidos pelo Governo Federal e que venha a refletir a variação do
+                                período.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>6)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">Havendo prorrogação tácita ou expressa do presente
+                                contrato o mesmo será reajustado a preço de mercado sem qualquer relação com o
+                                patamar aqui pactuado a ser estabelecido pelo LOCADOR, que poderá ainda
+                                estipular, de comum acordo com o LOCATÁRIO, o índice de reajuste e
+                                periodicidade.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>7)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">Nas cobranças judiciais e extrajudiciais de alugueis
+                                em atraso os mesmos serão acrescidos de juros de mora, atualização monetária e
+                                honorários advocatícios, na base de 20% ( vinte por cento ) sendo que qualquer
+                                recebimento feitos pela LOCADOR fora dos prazos e condições convencionais neste
+                                contrato, será havido como mera tolerância e não induzirá novação bem como
+                                resgate de recibos posteriores não significará quitação de aluguéis e outras
+                                obrigações contratuais deixadas de quitar nas épocas certas.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>8)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O imóvel da presente locação destina-se ao uso
+                                exclusivo como residência e domicilio do LOCATÁRIO, conforme cláusula 2, não
+                                sendo permitida a transferência, sublocação, cessão ou empréstimo no todo ou em
+                                parte, sem a prévia e expressa autorização do LOCADOR.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>9)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">Além do aluguel são de responsabilidade do LOCATÁRIO
+                                as despesas com consumo de luz, água, esgoto, seguro contra incêndio, imposto
+                                predial e todas as demais taxas ou impostos, tributos municipais e encargos da
+                                locação, que venham a incidir sobre o imóvel, inclusive taxa de condomínio, que
+                                deverão ser pagas diretamente pela mesma, o qual ficará obrigada a apresentar
+                                os comprovantes de quitação juntamente com o pagamento do aluguel.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>10)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">O LOCATÁRIO declara neste ato tomar conhecimento da
+                                existência de regras estabelecidas na CONVENÇÃO DE CONDOMÍNIOS e compromete-se
+                                a respeitá-las e cumpri-las, juntamente com seus familiares e prepostos, sob
+                                pena de rescisão contratual.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>11)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Encerrada a locação a entrega das chaves só será processada
+                                mediante exibição ao LOCADOR, dos comprovantes de quitação das despesas e
+                                encargos da locação referidos nas cláusulas anteriores, inclusive corte final
+                                de luz.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>12)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Fica facultado ao LOCADOR ou ao seu representante
+                                legal vistoriar o imóvel sempre que julgar necessário.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>13)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">O LOCATÁRIO se obriga, sob pena de cometer infração
+                                contratual, a comunicar por escrito ao LOCADOR, com antecipação mínima de 30
+                                (trinta) dias, a sua intenção de devolver o imóvel antes do prazo aqui
+                                previsto.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>14)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">O LOCATÁRIO assume o compromisso de solicitar ao
+                                LOCADOR uma vistoria 30 (trinta) dias antes de desocupar o imóvel para ser
+                                constatado o estado de conservação do mesmo.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>15)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Quaisquer modificações no imóvel locadas só poderão
+                                ser feitas com expressa autorização do LOCADOR. Aderem ao mesmo as benfeitorias
+                                sejam elas úteis, necessárias ou voluntárias independente de sua natureza, não
+                                cabendo direito de indenização, retenção, compensação ou reembolso.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>16)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Se no curso da locação vier a ocorrer incêndio ou
+                                danos no prédio que demandem obras que impeçam o seu uso normal por mais de 30
+                                (trinta) dias, falência ou insolvência do LOCATÁRIO, bem como desapropriação do
+                                imóvel, ficará rescindida de pleno direito a relação locatícia, sem qualquer
+                                direito de indenização ou retenção do objeto do presente contrato.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-indent: -17pt;" class="MsoBodyText2"><!--[if !supportLists]--><span times="" new="" roman",="" serif;"="" style="font-size: 12pt;"><span>17)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span times="" new="" roman",="" serif;"="" style="font-size: 12pt;">O LOCATÁRIO
+                                autoriza ao LOCADOR desde já, a proceder a sua citação inicial, interpelação,
+                                intimação, notificação, ou qualquer outro ato de comunicação processual
+                                mediante correspondência ou aviso de recebimento, mediante telegrama ou fax
+                                símile, afora as demais formas previstas em lei.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-indent: -17pt;" class="MsoBodyText2"><!--[if !supportLists]--><span times="" new="" roman",="" serif;"="" style="font-size: 12pt;"><span>18)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span times="" new="" roman",="" serif;"="" style="font-size: 12pt;">Fica convencionado
+                                que a parte que infringir o presente contrato em qualquer dos seus termos, se
+                                sujeita ao pagamento em benefício da outra, da multa contratual correspondente
+                                a 1 (uma) vez o valor do aluguel vigente à época da infração, tantas vezes
+                                forem as infrações praticadas, sem prejuízo da resolução contratual e demais
+                                comunicações previstas neste instrumento.<o:p></o:p></span></p> 
+                                <p style="text-indent: -17pt;" class="MsoBodyTextIndent3"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>19)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Se o LOCATÁRIO vier a usar da faculdade que lhe
+                                confere o contido no artigo 4º da Lei n º 8.245/1991 e devolver o imóvel antes
+                                do vencimento do prazo ajustado, pagará a multa compensatória equivalente a 02
+                                (duas) vezes o valor do aluguel vigente, reduzido proporcionalmente ao tempo do
+                                contrato já cumprido.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>20)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Salvo declaração escrita do LOCADOR, quaisquer
+                                tolerância ou concessões por ela feita não implicam em renúncia de direito ou
+                                em alteração contratual, não podendo ser invocada pelo LOCATÁRIO como
+                                procedente para se furtar ao cumprimento do contrato.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>21)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Permanecendo o LOCATÁRIO no imóvel após o prazo de
+                                desocupação voluntária nos casos de denúncia condicionada, pagará ele o aluguel
+                                pena que vier a ser arbitrado na notificação premonitória na forma de que
+                                dispõe o artigo 575 do Novo Código Civil Brasileiro, o mesmo ocorrendo no caso
+                                de mútuo acordo nos termos do artigo 9, inciso I da Lei n º 8.245/1991, quando
+                                a desocupação não se verificar na data convencionada.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>22)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">No caso do imóvel ser posto à venda, o LOCATÁRIO
+                                declara que não possui interesse em sua aquisição, renunciando expressamente ao
+                                eventual direito de preferência e autoriza desde já, a visita de interessados,
+                                em horários previamente convencionados.<o:p></o:p></span></p> 
+                                <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>23)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">O LOCATÁRIO declara, para todos os fins e efeitos de
+                                direito, que recebe o imóvel locado em condições plenas de uso, em perfeito
+                                estado de conservação, higiene e limpeza, obrigando-se e comprometendo-se a
+                                devolvê-lo em iguais condições, independente de qualquer aviso ou notificação
+                                prévia, e qualquer que seja o motivo da devolução, sob pena de incorrer nas cominações
+                                previstas neste contrato ou estipuladas em lei,<span>&nbsp;</span>além da obrigação de indenizar por danos ou prejuízos decorrentes da
+                                inobservância desta obrigação, salvo as deteriorações decorrentes de uso normal
+                                do imóvel.<o:p></o:p></span></p> 
+                                <p style="text-align: justify; margin-left: 17pt; text-indent: -17pt;" class="MsoBodyText3"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>24)<span times="" new="" roman";"="">&nbsp;</span></span></span><!--[endif]--><span style="font-size: 12pt;">Elegem as partes o foro do domicílio do LOCADOR, para
+                                dirimir quaisquer dúvidas oriundas do presente contrato, renunciando a qualquer
+                                outro por mais privilegiado que seja.</span><span style="font-size: 12pt;">&nbsp;</span></p> 
+                                
+                                <p style="text-align: justify;" class="MsoBodyText"><span times="" new="" roman",="" serif;"=""><o:p>&nbsp;</o:p></span></p><br>
+                                <p>&nbsp;</p></div>
+                </td>
+            
+
+            <!-- <tr class="item">
+                <td>
+                    Website design
+                </td>
+                
+                <td>
+                    $300.00
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                    Website design
+                </td>
+                
+                <td>
+                    $300.00
+                </td>
+            </tr>
+             -->
+            <!-- <tr class="item">
+                <td>
+                    Hosting (3 months)
+                </td>
+                
+                <td>
+                    $75.00
+                </td>
+            </tr>
+            
+            <tr class="item last">
+                <td>
+                    Domain name (1 year)
+                </td>
+                
+                <td>
+                    $10.00
+                </td>
+            </tr>
+             -->
+        </table>
+    </div>
+<script src="/JavaScript/client.js"></script>
+</body>
+</html>
