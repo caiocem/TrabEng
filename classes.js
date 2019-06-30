@@ -8,7 +8,20 @@ class Usuario {
         this.selfie = selfie
         this.statusConta = statusConta
         this.senha = senha
-        // this.idUsuario = 
+        this.imoveis = new List();
+        this.contratos = new List();
+        this.idUsuario = 1;
+    }
+    solicitarLocacao(imovel,data) {
+        dataAtual = new Date();
+        if(data > dataAtual) {
+            dataFim_ = data;
+            dataFim_.setFullYear(data.getFullYear()+1);
+            novoContrato = new Contrato(imovel.valor,data,dataFim_,0,0,this.idUsuario,imovel.idImovel);
+            this.contratos.push(novoContrato);
+            conteudo = this.nome + " est\xE1 interessado(a) no seu im\xF3vel " + imovel.nome + ".";
+            notificacaoParaLocador = new Notificacao(conteudo,dataAtual,imovel.idUsuario);
+        }
     }
     alterarDataInicio(contrato_,data) {
         if(contrato_.status>=0 && contrato_.status<=2) {
@@ -65,6 +78,10 @@ class Usuario {
     consultarImoveis(descricao="", localizacao="", comodos=new List(), valor=0.0, codigo="") {
         var resposta = new List(imoveis);
         resposta = resposta.filter(elem.descricao.includes(descricao));
+        resposta = resposta.filter(elem.localizacao.includes(localizacao));
+        // resposta = resposta.filter(elem.comodos.includes(comodos));
+        resposta = resposta.filter(elem.valor <= valor);
+        resposta = resposta.filter(elem.codigo.includes(codigo));
     }
     reprovaContratoLocador(contrato_) {
         if(contrato_.status==2) {
@@ -92,8 +109,13 @@ class Usuario {
             notificacaoParaLocador = new Notificacao(conteudo,dataAtual,imoveis[contrato_.idImovel].idUsuario);
         }
     }
-    pedidoDeExtensaoDeContrato(contrato_) {
-
+    cadastrarImovel(titulo,descricao,valor,imagem,localizacao,comodos,informacoesExtras="") {
+        codigo = 'aaaaaaaaaaaaa';
+        novoImovel = new Imovel(titulo,descricao,valor,imagem,localizacao,comodos,informacoesExtras,codigo);
+        this.imoveis.push(novoImovel);
+    }
+    removerImovel(seraRemovido) {
+        this.imoveis.delete(seraRemovido);
     }
 }
 
@@ -110,22 +132,22 @@ class Notificacao {
 }
 
 class Imovel {
-    constructor(titulo,descricao,valor,imagem,localizacao,comodos,informacoesExtres,codigo) {
+    constructor(titulo,descricao,valor,imagem,localizacao,comodos,informacoesExtras,codigo) {
         this.titulo = titulo
         this.descricao = descricao
         this.valor = valor
         this.imagem = imagem
         this.localizacao = localizacao
         this.comodos = comodos
-        this.informacoesExtres = informacoesExtres
+        this.informacoesExtras = informacoesExtras
         this.codigo = codigo
-        // this.idImovel = 
+        this.idImovel = 1;
     }
 
 }
 
 class Contrato {
-    constructor(valor,dataInicio,dataFim,status,metodoPagamento,codigo,idUsuario,idImovel) {
+    constructor(valor,dataInicio,dataFim,status,metodoPagamento,idUsuario,idImovel) {
         this.valor = valor
         this.dataInicio = dataInicio
         this.dataFim = dataFim
