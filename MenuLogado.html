@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="JavaScript/jquery-3.4.1.min.js"></script>
+<script src="JavaScript/client.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link href="css/StyleSheetMenuLogado.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -28,7 +30,7 @@
 		<div class="container" id="ContainerLogin">
 		  <hr>
 		  <label for="Nota"><b>Nota:<span id="NotaNum"></span></b></label></b></label>
-		  <input type="range" min="1" max="100" value="50" class="slider" id="Nota" oninput="SliderNota(this.value, this.id)">
+		  <input type="range" min="0" max="5" value="3" class="slider" id="Nota" oninput="SliderNota(this.value, this.id)">
 		  <label for="Cidade"><b>Cidade</b></label>
       <input type="text" placeholder="Hyrule" name="fldCidade" >
       <label for="Bairro"><b>Bairro</b></label>
@@ -42,7 +44,7 @@
       <label for="Cod"><b>Código</b></label>
 		  <input type="text" placeholder="M45T3R5W0RD" name="fldBairro" >
 	  	<hr>
-		  <button type="submit" class="btnLogin">Buscar</button>
+		  <button type="button" class="btnLogin" id="btnBuscar">Buscar</button>
 		</div>
 	</form>
 </div>

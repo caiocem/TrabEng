@@ -2,8 +2,8 @@
 <html>
 <head>
 <script src="JavaScript/jquery-3.4.1.min.js"></script>
-<script src="JavaScript/client.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="JavaScript/client.js" charset="utf-8"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link href="css/StyleSheetMenu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -17,12 +17,12 @@
 		<div class="container" id="ContainerLogin" style="display:none;"> 
 		  <hr>
 		  <label for="email/cpf" id="labelEmail"><b>Email/CPF</b></label>
-		  <input id="fieldEmail" type="text" placeholder="email/cpf" name="fldEmail" required>
+		  <input id="fieldEmail" type="text" placeholder="email/cpf" name="fldEmail">
 	  
 		  <label for="psw" id="labelpsw"><b>Password</b></label>
-		  <input id="fieldSenha" type="password" placeholder="senha" name="fldSenha" required>
+		  <input id="fieldSenha" type="password" placeholder="senha" name="fldSenha" >
 	  	  <hr>
-		  <button type="submit" class="btnLogin" id="btnLogin">Logar</button>
+		  <button type="button" class="btnLogin" id="btnLogin">Logar</button>
 		  <button type="button" class="btnLogin" id="ShowCadastr"onclick="ShowCadastro()">Cadastrar</button>
 		</div>
 	</form>
