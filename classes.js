@@ -62,7 +62,39 @@ class Usuario {
             contrato_.metodoPagamento = formaPagamento;
         }
     }
+    consultarImoveis(descricao="", localizacao="", comodos=new List(), valor=0.0, codigo="") {
+        var resposta = new List(imoveis);
+        resposta = resposta.filter(elem.descricao.includes(descricao));
+    }
+    reprovaContratoLocador(contrato_) {
+        if(contrato_.status==2) {
+            contrato_.status = 0;
+            conteudo = this.nome + " reprovou o contrato do aluguel do im\xF3vel " + imoveis[contrato_.idImovel].nome + ".";
+            const dataAtual = new Date();
+            notificacaoParaLocatario = new Notificacao(conteudo,dataAtual,contrato_.idUsuario);
+        } else if(contrato_.status==3) {
+            contrato_.status = 1;
+            conteudo = this.nome + " reprovou o contrato do aluguel do im\xF3vel " + imoveis[contrato_.idImovel].nome + ".";
+            const dataAtual = new Date();
+            notificacaoParaLocatario = new Notificacao(conteudo,dataAtual,contrato_.idUsuario);
+        }
+    }
+    reprovaContratoLocatario(contrato_) {
+        if(contrato_.status==1) {
+            contrato_.status = 0;
+            conteudo = this.nome + " reprovou o contrato do aluguel do im\xF3vel " + imoveis[contrato_.idImovel].nome + ".";
+            const dataAtual = new Date();
+            notificacaoParaLocador = new Notificacao(conteudo,dataAtual,imoveis[contrato_.idImovel].idUsuario);
+        } else if(contrato_.status==3) {
+            contrato_.status = 2;
+            conteudo = this.nome + " reprovou o contrato do aluguel do im\xF3vel " + imoveis[contrato_.idImovel].nome + ".";
+            const dataAtual = new Date();
+            notificacaoParaLocador = new Notificacao(conteudo,dataAtual,imoveis[contrato_.idImovel].idUsuario);
+        }
+    }
+    pedidoDeExtensaoDeContrato(contrato_) {
 
+    }
 }
 
 class Notificacao {
@@ -107,7 +139,7 @@ class Contrato {
     notificaçãoVencimentoAluguel() {
         const dataAtual = new Date();
         diasAteVencimento = dataInicio.getDay() - dataAtual.getDay();
-        if(diasAteVencimento==2 && this.status>=5 && this.status<=7) {
+        if(diasAteVencimento==2 && this.status>=6 && this.status<=8) {
             conteudo = "Seu alugel vencer\xE1 daqui a 2 dias.";
             vencimentoAluguel = new Notificacao(conteudo,dataAtual,this.idUsuario);
         }
@@ -116,7 +148,7 @@ class Contrato {
         const dataAtual = new Date();
         if(dataAtual.getMonth()==this.dataFim.getMonth() && dataAtual.getFullYear() == this.dataFim.getFullYear()) {
             diasAteVencimento = dataFim.getDay() - dataAtual.getDay();
-            if(diasAteVencimento==7 && this.status>=4 && this.status<=7) {
+            if(diasAteVencimento==7 && this.status>=5 && this.status<=8) {
                 conteudo = "Seu contrato do im\xF3vel " + imoveis[this.idImovel].nome + " vencer\xE1 daqui a 7 dias.";
                 vencimentoAluguel = new Notificacao(conteudo,dataAtual,this.idUsuario);
             }
