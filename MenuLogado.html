@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link href="css/StyleSheetMenuLogado.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="loadPageMenuLogado()">
 
 <div class="bg-image" onclick="CloseAll()" ></div>
 <div class="bg-text2" style="left:50%;top:15%"><img src="images/logoIcon.png" width="60%" height="60%"></div>
@@ -18,7 +18,7 @@
 </div>
 
 <div class="bg-text" id="Login" onclick="">
-  <div id="HeaderLogin" style="display:block"> <img src="images/logadoIcon.png" width="60%" height="60%" > </div>
+  <div id="HeaderLogin" style="display:block"> <img id="icoImoveis" src="images/logadoIcon.png" width="60%" height="60%" > </div>
   <form id="frmLogin"  style="display:none" class="container">
     <button type="btnLogin" class="btnLogin" id="btnImoveis" >Imóveis</button>
 	</form>

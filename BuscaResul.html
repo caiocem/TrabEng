@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="JavaScript/jquery-3.4.1.min.js"></script>
+    <script src="JavaScript/client.js" charset="utf-8"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
 <link href="css/StyleSheetBuscaResul.css" rel="stylesheet" type="text/css">
 </head>
@@ -71,23 +73,23 @@
                             <div class="containerOVER" id="ContainerLogin" >
                               <hr>
                               <p><label for="Pagamento"><b>Pagamento</b></label></p>
-                                <select name="slctPagar">
-                                    <option value="vlCard">Cartão</option>
-                                    <option value="vlBoleto">Boleto</option>
+                                <select name="slctPagar" id="metodoPagamento">
+                                    <option value="0">Cartão</option>
+                                    <option value="1">Boleto</option>
                                 </select>
                               <p><label for="Cidade"><b>Data Início</b></label></p>
-                              <input type="date" name="DataChegada">
+                              <input type="date" name="DataChegada" id="dataInicio">
                               <hr>
-                              <button type="button" class="btnLogin3" onclick="off(1)" id="btnRequereAluguel">Confirmar</buttn>
+                              <button type="button" class="btnLogin3" id="btnRequereAluguel">Confirmar</buttn>
                               <button type="button" class="btnLogin3" onclick="off(1)">Cancelar</buttn>
                             </div>
                     </form> 
                <p class="PinLine"><p class="PinLine" style="font-size:100%">Usuário: <p class="PinLine" id=User>Link</p> <button type="button" class="btnLogin2" onclick="ShowOver(3)">Contatar</button></p> <img src="images/FotoCasa.png"  align="left" width="20%" height="50%" style="align-self:left;" border="2" style="padding-bottom: 15px; float: left;" onclick="ShowOver(2)">
                  <p style="font-size: 120%">   Descrição </p>
                  <p id="Descricao" style="font-size: 120%">   Duas entradas, uma para cozinha e outra para a sala. Possuí um pequeno jardim de flores, região bem arborizada. Digna de um herói </p>
-                 <p class="PinLine">Nota: </p> <p id="vlrNota" class= "PinLine">valorNota        </p> <p class="PinLine">      Preço:  </p> 
-                 <p class="PinLine" id="Custo"> R$ Custo</p> <p class="PinLine">Cod: </p><p class="PinLine"id="Cod"> asdq</p>
-                 <p class="PinLine"> <button type="button" class="btnLogin2" >Contrato</button> </p>
+                 <p class="PinLine">Nota: </p> <p id="vlrNota" class= "PinLine">100       </p> <p class="PinLine">      Preço:  </p> 
+                 <p class="PinLine" id="Custo"> R$ 50</p> <p class="PinLine">Cod: </p><p class="PinLine"id="Cod"> M45T3R5W0RD</p>
+                 <p class="PinLine"> <button type="button" class="btnLogin2" id="btnContrato">Contrato</button> </p>
                  <p class="PinLine"> <button type="button" class="btnLogin2" onclick="ShowOver(1)">Alugar</button> </p>
               </p>
              </div>
