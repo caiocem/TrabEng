@@ -2,7 +2,7 @@
 <html>
 <head>
         <script src="JavaScript/jquery-3.4.1.min.js"></script>
-        <script src="JavaScript/loadContrato.js" charset="utf-8"></script>
+        <script src="JavaScript/client.js" charset="utf-8"></script>
     <meta charset="utf-8">
     <title>Template source : https://www.sparksuite.com/open-source/invoice.html</title>
     
@@ -101,7 +101,7 @@
     </style>
 </head>
 
-<body onload="loadPageContrato()">
+<body onload="PreviaContrato()">
     <div class="invoice-box">
         <table id="DadosNota" cellpadding="0" cellspacing="0">
             <tr class="top">
@@ -141,7 +141,7 @@
                                 <p align="center">&nbsp;</p><h2 style="text-align: center; margin-left: 106.2pt;"><b style="font-size: 12pt;">
                                     <div style="display: inline !important;"><b style="font-size: 12pt;">&nbsp;</b>
                                     </div></b></h2>
-                                <div style="text-align: center;"><span style="font-size: 12pt;"><b>TERMO DE CONTRATO</b></span>
+                                <div style="text-align: center;"><span style="font-size: 12pt;"><b>Prévia do Contrato</b></span>
                                 </div>
                                 <p align="center"><b>LOCAÇÃO RESIDENCIAL</b><span style="font-size: 12pt; text-align: justify;">&nbsp;</span></p> 
                                 <p style="text-align: justify;" class="MsoNormal"><b><span style="font-size: 12pt;" id="nomeLocador">(NOME)</span></b><span style="font-size: 12pt;">, <b id="cpfLocador">(CPF)</b>, <b id="rgLocador">(IDENTIDADE)</b> ,doravante denominado <b >LOCADOR;</b> <b id="nomeLocatario">(NOME)</b>, <b id="cpfLocatario">(CPF)</b>, <b id="rgLocatario">(IDENTIDADE)</b>,
@@ -152,7 +152,7 @@
                                 <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>2)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">A locação destina-se ao uso exclusivo como residência
                                 e domicilio do LOCATÁRIO.<o:p></o:p></span></p> 
                                 <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>3)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O prazo de locação inicia-se
-                                em <b id="dataInicio">(DATA)</b> e termina em <b id="dataFim">(DATA)</b> que é a data limite em que o imóvel
+                                em (<b id="dataInicio">DATA)</b> e termina em <b id="dataFim">(DATA)</b> que é a data limite em que o imóvel
                                 objeto do presente deverá ser restituído independentemente de qualquer
                                 notificação ou interpelação sob pena de caracterizar infração contratual.<o:p></o:p></span></p> 
                                 <p style="margin-left: 17pt; text-align: justify; text-indent: -17pt;" class="MsoNormal"><!--[if !supportLists]--><span style="font-size: 12pt;"><span>4)<span times="" new="" roman";"="">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><span style="font-size: 12pt;">O aluguel mensal será de <b id="valor">(R$)</b> e deverá ser pago

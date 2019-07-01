@@ -11,6 +11,15 @@ router.get("/BuscaIcon.png",(req,res)=>{
     });
 });
 
+router.get("/logoPequeno.png",(req,res)=>{
+  var img = "logoPequeno.png";
+  fs.readFile(img, function(err, data) {
+    res.writeHead(200, {'Content-Type': 'image/png'});
+    res.write(data);
+    res.end();
+  });
+});
+
 router.get("/ContatoIcon.png",(req,res)=>{
     var img = "../images/ContatoIcon.png";
     fs.readFile(img, function(err, data) {

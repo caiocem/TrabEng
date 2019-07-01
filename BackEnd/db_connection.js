@@ -31,8 +31,11 @@ module.exports = database =
 
     connection.query(sqlQry, function(error, results, fields)
     {
-      if(error) 
+      if(error)
+      {
+        console.log.apply(error);
         res.json(error);
+      } 
       else
       {
         console.log(results);

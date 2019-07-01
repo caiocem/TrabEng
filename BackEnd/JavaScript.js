@@ -20,6 +20,15 @@ router.get('/Controladora.js',(req,res) =>{
   });
 });
 
+router.get('/loadContrato.js',(req,res) =>{
+  var JS_Script = "../JavaScript/loadContrato.js";
+  fs.readFile(JS_Script, function(err, data) {
+    res.writeHead(200, {'Content-Type':'application/javascript'});
+    res.write(data);
+    res.end();
+  });
+});
+
 router.get('/client.js',(req,res) =>{
   var JS_Script = "../JavaScript/client.js";
   fs.readFile(JS_Script, function(err, data) {
